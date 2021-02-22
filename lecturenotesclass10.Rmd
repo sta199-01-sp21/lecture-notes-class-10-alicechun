@@ -81,11 +81,15 @@ Suppose we draw a single marble from our imaginary box, where all the marbles
 are equally likely to be selected. What is the probability the marble is blue? 
 How about white?
 
+Blue probability = 3/8
+White probability = 1/8
+
 We can simulate this "drawing" with the `sample()` function.
 
 ```{r sample}
 sample(marbles, size = 1)
 ```
+*Will be different everytime
 
 We produced one random outcome from this experiment. To estimate the probability 
 of say getting a white marble, we need to repeat this experiment many many
@@ -94,7 +98,7 @@ times.
 In the `sample()` function we can change the `size` argument and set
 `replace = TRUE`. Setting `replace = TRUE` allows to draw from our population
 of eight marbles each time. This way we can easily simulate our marble-drawing 
-experiment.
+experiment. 'replace = FALSE' is default.
 
 ```{r simulate_draws}
 draw_results <- sample(marbles, size = 10000, replace = TRUE)
@@ -105,7 +109,9 @@ counts <- table(draw_results)
 prop.table(counts)
 ```
 
-How close is this value to the "true" probability?
+How close is this value to the "true" probability? As we increase size/number of
+samples drawn, we get closer and closer to "true" probability (Law of Large
+Numberes).
 
 **To summarize our process:**
 
