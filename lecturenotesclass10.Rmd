@@ -49,17 +49,22 @@ xtabs(~ Treatment + Improved, data = Arthritis) %>%
 ```
 
 - How many patients were enrolled in the clinical trial?
+84 patients
 
 - What is the probability a randomly selected patient received the placebo?
+43/84 = 52% *marginal probability
 
 - What is the probability a randomly selected patient received the placebo
   and had a marked improvement?
+7/84 = 8.3%
   
 - What is the probability a randomly selected patient received the placebo
   and the treatment?
+0 *disjoint probability
   
 - What is the probability a randomly selected patient had some improvement or
   was on the treatment?
+48/84 = 57.1%
 
 ## Using computer simulations to calculate probabilities
 
