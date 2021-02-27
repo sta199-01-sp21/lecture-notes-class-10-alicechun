@@ -60,7 +60,7 @@ xtabs(~ Treatment + Improved, data = Arthritis) %>%
   
 - What is the probability a randomly selected patient received the placebo
   and the treatment?
-0 *disjoint probability
+0 *disjoint probability - not possible at same time
   
 - What is the probability a randomly selected patient had some improvement or
   was on the treatment?
@@ -109,17 +109,15 @@ counts <- table(draw_results)
 prop.table(counts)
 ```
 
-How close is this value to the "true" probability? As we increase size/number of
-samples drawn, we get closer and closer to "true" probability (Law of Large
-Numberes).
+How close is this value to the "true" probability? 
+As we increase size/number of samples drawn, we get closer and closer to 
+"true" probability (Law of Large Numbers).
 
 **To summarize our process:**
 
 1. We defined the sample space for our experiment - `marbles`
-2. We simulated this experiment many many times and recorded the outcomes from
-   each of the simulations.
-3. We computed the relative frequency of the observed outcomes from our many
-   simulations.
+2. We simulated this experiment many many times and recorded the outcomes from each of the simulations.
+3. We computed the relative frequency of the observed outcomes from our many simulations.
    
 #### Another example
 
@@ -172,7 +170,7 @@ Write down your guess to the answer before you calculate it.
 ```{r simulate_rolls}
 roll_results <- tibble(
   die_1 = replicate(n = 10000, expr = sample(1:6, size = 1)),
-  die_2 = replicate(n=10000, expr = sample(1:6, size = 1)))
+  die_2 = replicate(n = 10000, expr = sample(1:6, size = 1)))
 ```
 
 ```{r identify_events}
